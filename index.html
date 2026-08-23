@@ -1,0 +1,740 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Noble Tutors UK — Online GCSE & A-level tutoring</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #071b22;
+      --teal: #0b6e6a;
+      --teal-deep: #084b48;
+      --mist: #e8eef0;
+      --paper: #f5f8f9;
+      --line: #c9d5d8;
+      --muted: #4d6066;
+      --accent: #d97706;
+      --white: #ffffff;
+      --hero-grad: linear-gradient(105deg, rgba(7, 27, 34, 0.88) 0%, rgba(7, 27, 34, 0.55) 48%, rgba(7, 27, 34, 0.25) 100%);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Sora", sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #d7ecea 0%, transparent 55%),
+        radial-gradient(900px 500px at 100% 20%, #e7e2d4 0%, transparent 45%),
+        var(--paper);
+      line-height: 1.55;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem clamp(1rem, 4vw, 2.5rem);
+      background: rgba(245, 248, 249, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201, 213, 216, 0.7);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      font-family: "Fraunces", serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+    .brand img { height: 34px; width: auto; }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .nav a { text-decoration: none; color: var(--muted); }
+    .nav a:hover { color: var(--ink); }
+    .nav-cta {
+      background: var(--teal);
+      color: var(--white) !important;
+      padding: 0.55rem 0.95rem;
+      border-radius: 6px;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+    .nav-cta:hover { background: var(--teal-deep); transform: translateY(-1px); }
+
+    .hero {
+      position: relative;
+      min-height: min(92vh, 760px);
+      display: grid;
+      align-items: end;
+      color: var(--white);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        var(--hero-grad),
+        url("images/school-template-hero-img-bg.jpg") center / cover no-repeat;
+      transform: scale(1.06);
+      animation: heroDrift 18s ease-in-out infinite alternate;
+    }
+    @keyframes heroDrift {
+      from { transform: scale(1.06) translate3d(0, 0, 0); }
+      to { transform: scale(1.12) translate3d(-1.5%, -1%, 0); }
+    }
+    .hero-inner {
+      width: min(720px, 100%);
+      padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 3.5rem) clamp(3rem, 8vw, 5rem);
+      animation: rise 0.9s ease both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-brand {
+      font-family: "Fraunces", serif;
+      font-size: clamp(2.6rem, 7vw, 4.4rem);
+      font-weight: 700;
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      margin: 0 0 1rem;
+    }
+    .hero h1 {
+      margin: 0 0 0.85rem;
+      font-family: "Sora", sans-serif;
+      font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+      font-weight: 600;
+      line-height: 1.35;
+      max-width: 28ch;
+    }
+    .hero-lead {
+      margin: 0 0 1.6rem;
+      font-size: 1.02rem;
+      max-width: 38ch;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.85rem 1.25rem;
+      border-radius: 7px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: #f3b13d;
+      color: var(--ink);
+    }
+    .btn-primary:hover { background: #ffc857; }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.55);
+    }
+    .btn-ghost:hover { background: rgba(255, 255, 255, 0.1); }
+    .btn-teal {
+      background: var(--teal);
+      color: var(--white);
+    }
+    .btn-teal:hover { background: var(--teal-deep); }
+
+    section {
+      padding: clamp(3.5rem, 8vw, 5.5rem) clamp(1.25rem, 5vw, 3.5rem);
+    }
+    .section-inner { width: min(1080px, 100%); margin: 0 auto; }
+    .section-kicker {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin: 0 0 0.6rem;
+    }
+    .section-title {
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.8rem, 4vw, 2.55rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.75rem;
+      max-width: 18ch;
+    }
+    .section-copy {
+      margin: 0 0 2rem;
+      color: var(--muted);
+      max-width: 52ch;
+      font-size: 1.02rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      counter-reset: step;
+    }
+    .step {
+      position: relative;
+      padding-top: 0.25rem;
+      border-top: 2px solid var(--teal);
+    }
+    .step::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      display: block;
+      font-family: "Fraunces", serif;
+      font-size: 1.6rem;
+      color: var(--teal);
+      margin-bottom: 0.6rem;
+    }
+    .step h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.1rem;
+    }
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .subjects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .subject {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.85rem;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      text-decoration: none;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .subject:hover {
+      border-color: var(--teal);
+      transform: translateY(-2px);
+    }
+    .subject img {
+      width: 140px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 7px;
+    }
+    .subject h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.05rem;
+    }
+    .subject p {
+      margin: 0 0 0.55rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    .subject span {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--teal);
+    }
+
+    .proof {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .proof-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .proof-list li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.98rem;
+    }
+    .proof-list strong { color: var(--teal-deep); }
+    .proof-visual {
+      position: relative;
+      min-height: 320px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #123;
+    }
+    .proof-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 320px;
+    }
+
+    .quotes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .quote {
+      padding: 1.1rem 1.15rem;
+      background: var(--white);
+      border-left: 3px solid var(--teal);
+    }
+    .quote p {
+      margin: 0 0 0.7rem;
+      font-size: 0.92rem;
+    }
+    .quote cite {
+      font-style: normal;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .pricing-band {
+      background:
+        linear-gradient(135deg, #0b6e6a 0%, #084b48 55%, #071b22 100%);
+      color: var(--white);
+    }
+    .pricing-band .section-kicker { color: #f3b13d; }
+    .pricing-band .section-copy { color: rgba(255, 255, 255, 0.85); }
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .price {
+      padding: 1.35rem 1.4rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 10px;
+    }
+    .price h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1rem;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+    .price .amount {
+      font-family: "Fraunces", serif;
+      font-size: 2.4rem;
+      letter-spacing: -0.02em;
+    }
+    .price .amount span {
+      font-size: 1rem;
+      font-family: "Sora", sans-serif;
+      opacity: 0.8;
+    }
+    .guarantee {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 60ch;
+      margin: 0 0 1.25rem;
+    }
+
+    .parents {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .parents ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+    }
+    .parents li { margin-bottom: 0.55rem; }
+
+    .enquiry {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .contact-bits {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1.25rem;
+    }
+    .contact-bits a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--teal-deep);
+    }
+    form {
+      display: grid;
+      gap: 0.75rem;
+      padding: 1.25rem;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+    label {
+      display: grid;
+      gap: 0.35rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    input, select, textarea {
+      font: inherit;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--paper);
+      color: var(--ink);
+    }
+    textarea { min-height: 96px; resize: vertical; }
+    .form-note {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+    .form-success {
+      display: none;
+      padding: 1rem;
+      background: #e5f6f3;
+      border: 1px solid #9fd0c8;
+      border-radius: 8px;
+      color: var(--teal-deep);
+      font-weight: 600;
+    }
+    .form-success.show { display: block; }
+
+    footer {
+      padding: 2rem clamp(1.25rem, 5vw, 3.5rem) 2.5rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    .footer-inner {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    footer a { color: var(--teal-deep); }
+
+    @media (max-width: 860px) {
+      .nav a:not(.nav-cta) { display: none; }
+      .steps, .subjects, .proof, .quotes, .price-grid, .parents, .enquiry {
+        grid-template-columns: 1fr;
+      }
+      .subject { grid-template-columns: 110px 1fr; }
+      .subject img { width: 110px; height: 90px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">
+      <img src="images/cropped-NobleTutorsUK.png" alt="" />
+      Noble Tutors
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#how">How it works</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#parents">Parents</a>
+      <a class="nav-cta" href="#book">Book a free trial</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Hero">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="hero-brand">Noble Tutors</p>
+        <h1>Online GCSE &amp; A-level tutoring that gets results</h1>
+        <p class="hero-lead">
+          Science, Maths and Chemistry for students aiming at medicine, engineering and health careers.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#book">Book a free trial</a>
+          <a class="btn btn-ghost" href="https://wa.me/447487686533" target="_blank" rel="noopener">WhatsApp us</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="section-inner reveal">
+        <p class="section-kicker">Simple start</p>
+        <h2 class="section-title">From first message to first lesson</h2>
+        <p class="section-copy">No complicated signup. Parents and students know exactly what happens next.</p>
+        <div class="steps">
+          <article class="step">
+            <h3>Tell us the subject</h3>
+            <p>Share year group, exam board and what you want to improve — grades, confidence, or exam technique.</p>
+          </article>
+          <article class="step">
+            <h3>Free trial lesson</h3>
+            <p>Meet your tutor online, see the teaching style, and agree a clear plan for the weeks ahead.</p>
+          </article>
+          <article class="step">
+            <h3>Weekly progress</h3>
+            <p>Regular lessons with feedback parents can understand — so you always know if it’s working.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="subjects" style="background: rgba(255,255,255,0.55);">
+      <div class="section-inner reveal">
+        <p class="section-kicker">What we teach</p>
+        <h2 class="section-title">Choose your subject</h2>
+        <p class="section-copy">Lessons matched to your school exam board — AQA, Edexcel, OCR and more.</p>
+        <div class="subjects">
+          <a class="subject" href="#book">
+            <img src="images/school-template-curriculum-img-1.jpg" alt="" />
+            <div>
+              <h3>GCSE / A-level Biology</h3>
+              <p>KS3 to A-level — built for future medics and life sciences.</p>
+              <span>Book Biology →</span>
+            </div>
+          </a>
+          <a class="subject" href="#book">
+            <img src="images/school-template-curriculum-img-2.jpg" alt="" />
+            <div>
+              <h3>GCSE / A-level Chemistry</h3>
+              <p>From foundations to A-level molecular science and exam technique.</p>
+              <span>Book Chemistry →</span>
+            </div>
+          </a>
+          <a class="subject" href="#book">
+            <img src="images/school-template-curriculum-img-3.jpg" alt="" />
+            <div>
+              <h3>GCSE Physics</h3>
+              <p>Clear explanations that stick — ideal for engineering pathways.</p>
+              <span>Book Physics →</span>
+            </div>
+          </a>
+          <a class="subject" href="#book">
+            <img src="images/school-template-curriculum-img-4.jpg" alt="" />
+            <div>
+              <h3>GCSE Mathematics</h3>
+              <p>Targeted support for grade goals, including higher-tier stretch.</p>
+              <span>Book Maths →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof">
+      <div class="section-inner reveal">
+        <div class="proof">
+          <div>
+            <p class="section-kicker">Why families choose us</p>
+            <h2 class="section-title">Qualified tutors. Clear outcomes.</h2>
+            <ul class="proof-list">
+              <li><strong>Fully qualified tutors</strong> — BSc, PGCE and QTS, including teachers with Master’s-level training.</li>
+              <li><strong>15+ years</strong> secondary Science teaching experience in the team.</li>
+              <li><strong>Exam-board aligned</strong> lessons that complement school, not confuse it.</li>
+              <li><strong>Grade-focused plans</strong> with strategies students can reuse in mocks and finals.</li>
+            </ul>
+            <div class="quotes">
+              <blockquote class="quote">
+                <p>“She finally understands Chemistry instead of memorising it. Her confidence in class changed in weeks.”</p>
+                <cite>— Parent of GCSE student</cite>
+              </blockquote>
+              <blockquote class="quote">
+                <p>“Clear explanations, proper homework feedback, and no wasted lessons. Exactly what we needed before mocks.”</p>
+                <cite>— Parent of Year 11 student</cite>
+              </blockquote>
+              <blockquote class="quote">
+                <p>“A-level support that feels like a real teacher, not a rushed worksheet session.”</p>
+                <cite>— A-level Chemistry student</cite>
+              </blockquote>
+            </div>
+            <p class="form-note" style="margin-top:1rem;">Sample testimonials for this preview — replace with your real parent reviews before going live.</p>
+          </div>
+          <div class="proof-visual">
+            <img src="images/Screenshot-2025-11-22-234037.png" alt="Science tutoring focus" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-band" id="pricing">
+      <div class="section-inner reveal">
+        <p class="section-kicker">Straightforward pricing</p>
+        <h2 class="section-title" style="color:#fff; max-width:16ch;">Honest rates. No surprises.</h2>
+        <p class="section-copy">Negotiable packages available for regular weekly bookings.</p>
+        <div class="price-grid">
+          <div class="price">
+            <h3>GCSE &amp; KS3 / 11+</h3>
+            <p class="amount">£30 <span>/ hour</span></p>
+          </div>
+          <div class="price">
+            <h3>A-level</h3>
+            <p class="amount">£35 <span>/ hour</span></p>
+          </div>
+        </div>
+        <p class="guarantee">
+          Our contract includes a clear grade guarantee on selected subjects
+          (minimum level 4 in GCSE Science*, level 6 in Mathematics, or grade B in A-level Chemistry)
+          — or your tuition fees back. Full terms explained before you book.
+          <br /><small>*Double Science: 4,4 · Triple Science: 4,4,4</small>
+        </p>
+        <a class="btn btn-primary" href="#book">Book a free trial</a>
+      </div>
+    </section>
+
+    <section id="parents">
+      <div class="section-inner parents reveal">
+        <div>
+          <p class="section-kicker">For parents</p>
+          <h2 class="section-title">You stay in the loop</h2>
+          <p class="section-copy">You’re the decision-maker — so we make progress visible and communication easy.</p>
+          <ul>
+            <li>What happens in the first lesson, before you commit long-term</li>
+            <li>How we report progress in plain English</li>
+            <li>How the grade guarantee works — and what it does not cover</li>
+            <li>Flexible online scheduling around school and clubs</li>
+          </ul>
+        </div>
+        <div>
+          <img
+            src="images/school-template-headmaster-img.jpg"
+            alt="Experienced tutor"
+            style="width:100%; border-radius:14px; object-fit:cover; max-height:380px;"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="book" style="background: rgba(255,255,255,0.6);">
+      <div class="section-inner enquiry reveal">
+        <div>
+          <p class="section-kicker">Book or enquire</p>
+          <h2 class="section-title">Start with a free trial</h2>
+          <p class="section-copy">
+            Send a short message and we’ll reply with times that fit. Prefer to talk now? Call or WhatsApp.
+          </p>
+          <div class="contact-bits">
+            <div><strong>Phone</strong><br /><a href="tel:+447487686533">07487686533</a></div>
+            <div><strong>WhatsApp</strong><br /><a href="https://wa.me/447487686533" target="_blank" rel="noopener">Message Noble Tutors</a></div>
+            <div><strong>Email</strong><br /><a href="mailto:uknobletutors@outlook.com">uknobletutors@outlook.com</a></div>
+            <div><strong>Based in</strong><br />Hertfordshire, England · Online nationwide</div>
+          </div>
+        </div>
+
+        <form id="enquiry-form" action="mailto:uknobletutors@outlook.com" method="post" enctype="text/plain">
+          <div class="form-success" id="form-success">Thanks — your enquiry details are ready. Send the email that opens, or WhatsApp us if you prefer.</div>
+          <label>
+            Parent / student name
+            <input name="name" required placeholder="Your name" />
+          </label>
+          <label>
+            Subject
+            <select name="subject" required>
+              <option value="">Select…</option>
+              <option>GCSE Biology</option>
+              <option>GCSE Chemistry</option>
+              <option>GCSE Physics</option>
+              <option>GCSE Mathematics</option>
+              <option>A-level Chemistry</option>
+              <option>A-level Biology</option>
+              <option>Other / not sure</option>
+            </select>
+          </label>
+          <label>
+            Year group
+            <input name="year" required placeholder="e.g. Year 10 / Year 12" />
+          </label>
+          <label>
+            Best times / notes
+            <textarea name="notes" placeholder="Exam board, goals, preferred days…"></textarea>
+          </label>
+          <label>
+            Phone or email
+            <input name="contact" required type="text" placeholder="How should we reply?" />
+          </label>
+          <button class="btn btn-teal" type="submit">Send enquiry</button>
+          <p class="form-note">We only use your details to reply about tutoring. See our confidentiality policy when the live site is restored.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <strong style="color:var(--ink); font-family:'Fraunces',serif;">Noble Tutors UK</strong><br />
+        Online GCSE &amp; A-level Science and Maths tutoring<br />
+        <span style="font-size:0.8rem;">© 2026 Noble Tutors UK. All rights reserved.</span>
+      </div>
+      <div>
+        <a href="mailto:uknobletutors@outlook.com">Email</a> ·
+        <a href="tel:+447487686533">Call</a> ·
+        <a href="https://wa.me/447487686533" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) e.target.classList.add("visible");
+        });
+      },
+      { threshold: 0.12 }
+    );
+    reveals.forEach((el) => io.observe(el));
+
+    const form = document.getElementById("enquiry-form");
+    const success = document.getElementById("form-success");
+    form.addEventListener("submit", (event) => {
+      // Keep mailto behaviour, but also show on-page confirmation.
+      success.classList.add("show");
+      // Allow mailto to open; if blocked, user still sees success + contact links.
+    });
+  </script>
+</body>
+</html>
