@@ -310,28 +310,6 @@
       min-height: 320px;
     }
 
-    .quotes {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    .quote {
-      padding: 1.1rem 1.15rem;
-      background: var(--white);
-      border-left: 3px solid var(--teal);
-    }
-    .quote p {
-      margin: 0 0 0.7rem;
-      font-size: 0.92rem;
-    }
-    .quote cite {
-      font-style: normal;
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-weight: 600;
-    }
-
     .pricing-band {
       background:
         linear-gradient(135deg, #0b6e6a 0%, #084b48 55%, #071b22 100%);
@@ -461,7 +439,7 @@
 
     @media (max-width: 860px) {
       .nav a:not(.nav-cta) { display: none; }
-      .steps, .subjects, .proof, .quotes, .price-grid, .parents, .enquiry {
+      .steps, .subjects, .proof, .price-grid, .parents, .enquiry {
         grid-template-columns: 1fr;
       }
       .subject { grid-template-columns: 110px 1fr; }
@@ -576,21 +554,6 @@
               <li><strong>Exam-board aligned</strong> lessons that complement school, not confuse it.</li>
               <li><strong>Grade-focused plans</strong> with strategies students can reuse in mocks and finals.</li>
             </ul>
-            <div class="quotes">
-              <blockquote class="quote">
-                <p>“She finally understands Chemistry instead of memorising it. Her confidence in class changed in weeks.”</p>
-                <cite>— Parent of GCSE student</cite>
-              </blockquote>
-              <blockquote class="quote">
-                <p>“Clear explanations, proper homework feedback, and no wasted lessons. Exactly what we needed before mocks.”</p>
-                <cite>— Parent of Year 11 student</cite>
-              </blockquote>
-              <blockquote class="quote">
-                <p>“A-level support that feels like a real teacher, not a rushed worksheet session.”</p>
-                <cite>— A-level Chemistry student</cite>
-              </blockquote>
-            </div>
-            <p class="form-note" style="margin-top:1rem;">Sample testimonials for this preview — replace with your real parent reviews before going live.</p>
           </div>
           <div class="proof-visual">
             <img src="images/Screenshot-2025-11-22-234037.png" alt="Science tutoring focus" />
