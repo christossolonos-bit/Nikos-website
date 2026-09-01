@@ -1,6 +1,6 @@
 # Noble Tutors UK
 
-Private marketing website for Noble Tutors (online GCSE & A-level tutoring).
+Private marketing website for Noble Tutors UK (online GCSE & A-level tutoring).
 
 ## Local preview
 
